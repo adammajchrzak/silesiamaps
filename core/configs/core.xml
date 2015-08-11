@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<configdata>
+	<core>
+		<mode>staging</mode>
+		<baseUrl></baseUrl>
+		<suffix>.html</suffix>
+		<sessionName>cms</sessionName>
+		<delimiter>/</delimiter>
+		<default_locale>pl</default_locale>
+		<multi_locale>1</multi_locale>
+		<email_from_name>jusee.pl</email_from_name>
+		<email_from_mail>alert@jusee.pl</email_from_mail>
+		<cache>
+			<timeout>120</timeout>
+		</cache>
+		<pagination>
+			<itemsPerPage>8</itemsPerPage>
+			<pagesInRange>10</pagesInRange>
+		</pagination>
+		<style_base>style.base.css</style_base>
+		<jquery_min>jquery-1.7.1.min.js</jquery_min>
+		<jqueryui>1.8.13.custom</jqueryui>
+		<gallery_dir>/files/gallery/</gallery_dir>		
+		<gallery_max_x>800</gallery_max_x>
+		<gallery_max_y>600</gallery_max_y>
+		<gallery_min_x>100</gallery_min_x>
+		<gallery_min_y>100</gallery_min_y>
+		<upload_dir>var/upload</upload_dir>
+		<meta_data>
+			<title>EUREGIO PL-CZ</title>
+			<keywords>EUREGIO PL-CZ</keywords>
+			<description>EUREGIO PL-CZ</description>
+		</meta_data>
+		
+		<templates>
+<!--			<sidebar_left>templates/site/sidebar-left.tpl</sidebar_left>
+			<sidebar_right>templates/site/sidebar-right.tpl</sidebar_right>
+			<footer_eu>templates/site/common/footer_eu.tpl</footer_eu>
+			<footer_page>templates/site/common/footer_page.tpl</footer_page>-->
+		</templates>
+		
+		<email>
+			<account>noreply@euroregions.org</account>
+			<passwd>4ed3WW@#kjhg</passwd>
+			<server>smtp.euroregions.org</server>
+		</email>
+	</core>
+	
+	<production>
+		<database>
+			<adapter>pdo_mysql</adapter>
+			<params>
+				<host>localhost</host>
+				<username>root</username>
+				<password></password>
+				<dbname>euroregion</dbname>
+				<charset>utf8</charset>
+				<prefix></prefix>
+			</params>
+		</database>
+		<view>
+			<templates_dir>templates</templates_dir>
+			<compile_dir>var/views_c</compile_dir>
+		</view>
+	</production>
+	
+	<staging extends="production">
+		<database>
+			<adapter>pdo_mysql</adapter>
+			<params>
+				<host>localhost</host>
+				<username>root</username>
+				<password>root</password>
+				<dbname>euroregion</dbname>
+				<charset>utf8</charset>
+				<prefix></prefix>
+			</params>
+		</database>
+		<view>
+			<templates_dir>templates</templates_dir>
+			<compile_dir>var/views_c</compile_dir>
+		</view>
+	</staging>
+	
+</configdata>
