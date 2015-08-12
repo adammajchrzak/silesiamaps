@@ -8,8 +8,8 @@
 		<delimiter>/</delimiter>
 		<default_locale>pl</default_locale>
 		<multi_locale>1</multi_locale>
-		<email_from_name>jusee.pl</email_from_name>
-		<email_from_mail>alert@jusee.pl</email_from_mail>
+		<email_from_name>netiz.pl</email_from_name>
+		<email_from_mail>biuro.netiz@gmail.com</email_from_mail>
 		<cache>
 			<timeout>120</timeout>
 		</cache>
