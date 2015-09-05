@@ -35,7 +35,6 @@ class galleryController extends Engine_Controller	{
 		$this->_head->addScriptFile('jquery.colorbox.js', true, '/scripts/');
 		$this->_head->addScriptFile('gallery.js', true, '/scripts/cms/');		// JqueryUI JS
         $this->_head->addScriptFile('ckeditor.js', true, '/scripts/cms/ckeditor/');
-        //$this->_head->addScriptFile('base.js', true, '/scripts/cms/');		// JqueryUI JS
 		
 		if($this->_config->multi_locale == '1')	{
 			$this->_view->locale_list	=	$this->_function->getSiteLocaleList();
@@ -113,17 +112,6 @@ class galleryController extends Engine_Controller	{
 	public function upload() {
 		
 		if (!empty($_FILES)) {
-				
-			/*
-			$tempFile		= $_FILES['filedata']['tmp_name'];
-			$targetPath 	= $_SERVER['DOCUMENT_ROOT'].$this->_config->gallery_dir.str_pad((int)$this->_router->getItemSegments(4),4,'0',STR_PAD_LEFT).'/';
-			
-			mkdir(str_replace('//','/',$targetPath), 0755, true);
-			
-			$targetFile =  str_replace('//','/',$targetPath) . $_FILES['filedata']['name'];
-			
-			move_uploaded_file($tempFile, $targetFile);
-			*/
 			
 			$dirname	=	str_pad((int)$this->_router->getItemSegments(4),4,'0',STR_PAD_LEFT);
 			$filename	=	date("His").stripslashes($_FILES['filedata']['name']);
@@ -187,15 +175,11 @@ class galleryController extends Engine_Controller	{
 			    $heightN	=	$height;
 			    
 			    if($width > $height)	{
-			    	
 					if($width > $this->_config->gallery_max_x)	{
-			      	
 			      		$widthN		=	$this->_config->gallery_max_x;
 			        	$heightN	=	$widthN * $wymiar;
 			      	}
-					
 			    }	else {
-		
 			     	if($height > $this->_config->gallery_max_y)	{
 			        	$heightN	= 	$this->_config->gallery_max_y;
 			         	$widthN 	=	$heightN/$wymiar;
@@ -203,13 +187,9 @@ class galleryController extends Engine_Controller	{
 			    }
 			    
 			    $newImage = imagecreatetruecolor($widthN, $heightN);
-			    
 			    //kopiuje zmniejszone do max wymiarow zdjecie pod zmienna $newImage
 			    imagecopyresampled($newImage, $oldImage, 0, 0, 0, 0, $widthN, $heightN, $width, $height);
-			    
 			    //tworzy katalog jesli taki nie istnieje
-				//echo $_SERVER['DOCUMENT_ROOT'].$this->_config->gallery_dir."/".$dir_gallery_name."/big/".$alias;
-			    
 			    if(!imagejpeg($newImage, $_SERVER['DOCUMENT_ROOT'].$this->_config->gallery_dir.$dirname."/big/".$alias))	{
 			    		
 			    	imagedestroy($newImage);

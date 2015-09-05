@@ -25,8 +25,6 @@ class indexController extends Engine_Controller	{
 		$this->_user 	= UsersModel::Instance();
 		
 		$this->_head->addStyleFile('jquery.ui.all.css', 'screen', true, '/css/jquery-ui/');         // JqueryUI CSS
-		// $this->_head->addStyleFile('Aristo.css', 'screen', true, '/css/jquery-ui-aristo/');
-		// $this->_head->addStyleFile('jquery.ui.uniform.css', 'screen', true, '/css/jquery-ui/'); 	// JqueryUI CSS
 		$this->_head->addStyleToImport('index', 'cms', 'base.css');
 		
 		$this->_head->addScriptFile('jquery-ui-'.$this->_config->jqueryui.'.min.js', true, '/scripts/jquery-ui/');		// JqueryUI JS
