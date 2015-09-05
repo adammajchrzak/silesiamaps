@@ -1,59 +1,95 @@
+<div id="page-index-content">
+    <div>
+        <h3>WYSZUKIWARKA</h3>
+        ZREALIZOWANYCH PROJEKTÓW
+    </div>
 
-<div id="home-news-field">
-	<h3>{$locale.site.index.header.news}</h3>
-	<table class="homepage-news-list">
-		<tr>
-		{foreach item=tree name=tree from=$news_list}
-		<td><div class="homepage-news-list-title"><a href="/{$router->getUrl($config->current_locale, 'news',$tree._code,$tree.news_id)}">{$tree._title}</a></div></td>
-		{/foreach}
-		</tr>
-		<tr>
-		{foreach item=tree name=tree from=$news_list}
-		<td><div class="homepage-news-list-date">{$tree._publish}</div></td>
-		{/foreach}
-		</tr>
-		<tr>
-		{foreach item=tree name=tree from=$news_list}
-		<td><div class="homepage-news-list-lead">{$tree._lead}</div></td>
-		{/foreach}
-		</tr>
-		<tr>
-		{foreach item=tree name=tree from=$news_list}
-		<td><div class="homepage-news-list-more"><a href="/{$router->getUrl($config->current_locale, 'news',$tree._code,$tree.news_id)}">{$locale.site.nav.more} &raquo;</a></div></td>
-		{/foreach}
-		</tr>
-	</table>
-</div>
-<div class="ui-helper-clearfix" style="margin-top: 20px;"></div>
+    <form method="get" action="/">
 
-<div id="home-events-field">
-	<h3>{$locale.site.index.header.events}</h3>
-	<table class="homepage-news-list">
-		<tr>
-		{foreach item=tree name=tree from=$calendar_list}
-			<td><div class="homepage-news-list-title"><a href="/{$router->getUrl($config->current_locale, 'calendar',$tree._code,$tree.event_id)}">{$tree.event_name}</a></div></td>
-		{/foreach}
-		</tr>
-		<tr>
-		{foreach item=tree name=tree from=$calendar_list}
-			<td><div class="homepage-news-list-date">{$tree.event_start}</div></td>
-		{/foreach}
-		</tr>
-		<tr>
-		{foreach item=tree name=tree from=$calendar_list}
-			<td><div class="homepage-news-list-lead">{if trim($tree.event_lead) != ''}{$tree.event_lead}{else}&nbsp;&nbsp;{/if}</div></td>
-		{/foreach}
-		</tr>
-		<tr>
-		{foreach item=tree name=tree from=$calendar_list}
-			<td><div class="homepage-news-list-more"><a href="/{$router->getUrl($config->current_locale, 'calendar',$tree._code,$tree.event_id)}">{$locale.site.nav.more} &raquo;</a></div></td>
-		{/foreach}
-		</tr>
-	</table>
-</div>
-<div class="ui-helper-clearfix" style="margin-top: 20px;"></div>
+        <div>
+            <input type="text" id="title" name="title" placeholder="Tytuł projektu" />
+        </div>
 
-<div id="home-content-field">
-	<h3>{$locale.site.header.home}</h3>
-	<p>{$page_details.content_text}</p>
+        <div class="styled-select">
+            <select id="stateId" name="stateId">
+                <option value="">Województwo</option>
+                {foreach $stateList as $state}
+                    <option value="{$state.state_id}"{if $selected.stateId === $state.state_id} selected{/if}>{$state.state_name}</option>
+                {/foreach}   
+            </select>
+        </div>
+
+        <div class="styled-select">
+            <select id="regionId" name="regionId">
+                <option value="">Powiat</option>
+                {foreach $regionList as $region}
+                    <option value="{$region.region_id}"{if $selected.regionId === $region.region_id} selected{/if}>{$region.region_name}</option>
+                {/foreach}   
+            </select>
+        </div>    
+
+        <div class="styled-select">
+            <select id="communeId" name="communeId">
+                <option value="">Gmina</option>
+                {foreach $communeList as $commune}
+                    <option value="{$commune.commune_id}"{if $selected.communeId === $commune.commune_id} selected{/if}>{$commune.commune_name}</option>
+                {/foreach}   
+            </select>
+        </div>
+
+        <div class="styled-select">
+            <select id="cityId" name=cityId>
+                <option value="">Miejscowość</option>
+                {foreach $cityList as $city}
+                    <option value="{$city.city_id}"{if $selected.cityId === $city.city_id} selected{/if}>{$city.city_name}</option>
+                {/foreach}   
+            </select>
+        </div>    
+
+        <div class="styled-select">
+            <select id="bTypeId" name="bTypeId">
+                <option value="">Rodzaj beneficjenta</option>
+                {foreach $btList as $bt}
+                    <option value="{$bt.btype_id}"{if $selected.bTypeId === $bt.btype_id} selected{/if}>{$bt.btype_name}</option>
+                {/foreach}   
+            </select>
+        </div>    
+
+        <div class="styled-select">
+            <select id="pTypeId" name="pTypeId">
+                <option value="">Rodzaj projektu</option>
+                {foreach $ptList as $pt}
+                    <option value="{$pt.ptype_id}"{if $selected.pTypeId === $pt.ptype_id} selected{/if}>{$pt.ptype_name}</option>
+                {/foreach}   
+            </select>
+        </div> 
+        <button type="submit">WYSZUKAJ</button>
+    </form>
+
+
+    <h2>Wyniki wyszukiwania</h2>        
+    <table id="projectList">
+        <tr>
+            <th>Tytuł projektu</th>
+            <th>Województwo</th>
+            <th>Powiat</th>
+            <th>Gmina</th>
+            <th>Miejscowość</th>
+            <th>Rodzaj beneficjenta</th>
+            <th>Rodzaj projektu</th>
+        </tr>
+
+        {foreach $projectList as $item}
+            <tr>
+                <td><a href="{$item.project_id}">{$item.project_title}</a></td>
+                <td>{$item.state_name}</td>
+                <td>{$item.region_name}</td>
+                <td>{$item.commune_name}</td>
+                <td>{$item.city_name}</td>
+                <td>{$item.btype_name}</td>
+                <td>{$item.ptype_name}</td>
+            </tr>
+        {/foreach}    
+    </table>
+
 </div>

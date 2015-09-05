@@ -64,7 +64,6 @@ abstract class Engine_Controller	{
 				$locale	= array_merge($locale, $locale);
 			}
 			
-			$this->_head->addScriptFile('jquery.cycle.all.js', true, '/scripts/');
 			$this->_config->locale	= $locale;
 		}
 		

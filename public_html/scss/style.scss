@@ -1,0 +1,77 @@
+body {
+    background-color: #dbe1f9;
+}
+input {
+   width: 220px;
+   padding: 10px;
+   font-size: 16px;
+   line-height: 1;
+   background-color: #dbe1f9;
+   border: 1px solid #4d69b2;
+   border-radius: 5px;
+   color: #4d69b2 !important;
+}
+
+select {
+   background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   color: #4d69b2;
+   margin-right: 3px;
+}
+
+.styled-select {
+    width: 240px;
+    height: 34px;
+    overflow: hidden;
+    background: url(/images/select-arrow.png) no-repeat right #dbe1f9;
+    border: 1px solid #4d69b2;
+    border-radius: 5px;
+}
+
+button {
+   width: 240px;
+   padding: 10px;
+   font-size: 16px;
+   line-height: 1;
+   background-color: #bed336;
+   border: 1px solid #bed336;
+   border-radius: 5px;
+   color: #ffffff !important;
+   font-weight: bolder;
+}
+
+h2 {
+    width: 100%;
+    text-align: center;
+    background-color: #3a3d8c;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#page-index-content { 
+    width: 950px;
+    margin: auto;
+}
+
+#projectList {
+    width: 100%;
+    tr:nth-child(even) {
+        background: #dbe1f9;
+    }
+    tr:nth-child(odd) {
+        background: #bbc4eb;
+    }
+    td {
+        color: #3b3885;
+        padding: 5px;
+    }
+}
+

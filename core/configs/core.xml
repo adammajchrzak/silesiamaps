@@ -18,7 +18,7 @@
 			<pagesInRange>10</pagesInRange>
 		</pagination>
 		<style_base>style.base.css</style_base>
-		<jquery_min>jquery-1.7.1.min.js</jquery_min>
+		<jquery_min>jquery-2.1.4.min.js</jquery_min>
 		<jqueryui>1.8.13.custom</jqueryui>
 		<gallery_dir>/files/gallery/</gallery_dir>		
 		<gallery_max_x>800</gallery_max_x>
@@ -70,7 +70,7 @@
 			<params>
 				<host>localhost</host>
 				<username>root</username>
-				<password>root</password>
+				<password>mysql</password>
 				<dbname>euroregion</dbname>
 				<charset>utf8</charset>
 				<prefix></prefix>

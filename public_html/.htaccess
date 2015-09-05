@@ -6,5 +6,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule !(\.(js|ico|gif|jpg|png|css|swf|avi|mpg|mpeg|wmv|pdf|ttf))$ index.php
 
-#php_value error_reporting On
+php_value error_reporting Off
 #php_value magic_quotes_gpc Off

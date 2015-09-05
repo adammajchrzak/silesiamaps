@@ -19,7 +19,7 @@ class IndexModel extends Engine_Model {
 	}	
 	
 	
-	public function getProjectList()	{
+	public function getProjectList($where = array())	{
 		
 		$select = $this->_db->select()
             ->from(array('cp' => 'cms_project'))
@@ -44,12 +44,52 @@ class IndexModel extends Engine_Model {
                 array('*')
             )
             ->joinLeft(
+                array('co' => 'cms_commune'),
+                'cp.commune_id = co.commune_id',
+                array('*')
+            )
+            ->joinLeft(
                 array('cc' => 'cms_city'),
                 'cp.city_id = cc.city_id',
                 array('*')
             )
             ;
-								
+		
+        if(empty($where) === false) {
+            if(empty($where['title']) === false) {
+                $select->where('cp.project_title LIKE ?', '%'.$where['title'].'%');
+            }
+            
+            if(is_numeric($where['stateId'])) {
+                $select->where('cs.state_id = ?', intval($where['stateId']));
+            }
+            
+            if(is_numeric($where['regionId'])) {
+                $select->where('cr.region_id = ?', intval($where['regionId']));
+            }
+            
+            if(is_numeric($where['regionId'])) {
+                $select->where('cr.region_id = ?', intval($where['regionId']));
+            }
+            
+            if(is_numeric($where['communeId'])) {
+                $select->where('co.commune_id = ?', intval($where['communeId']));
+            }
+            
+            if(is_numeric($where['cityId'])) {
+                $select->where('cc.city_id = ?', intval($where['cityId']));
+            }
+            
+            if(is_numeric($where['bTypeId'])) {
+                $select->where('cbt.btype_id = ?', intval($where['bTypeId']));
+            }
+            
+            if(is_numeric($where['pTypeId'])) {
+                $select->where('cpt.ptype_id = ?', intval($where['pTypeId']));
+            }
+        }
+        
+        
 		$result = $this->_db->fetchAll($select);
 		
 		return $result;
