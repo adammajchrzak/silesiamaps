@@ -43,7 +43,7 @@ abstract class Engine_Controller	{
 		/**
 		 * obsługa wersji językowych START
 		 */
-		// $this->_session->current_locale = $this->_config->default_locale;
+		//$this->_session->current_locale = $this->_config->default_locale;
 		
 		
 		if($this->_config->module_type == 'cms')	{

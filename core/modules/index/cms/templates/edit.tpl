@@ -117,7 +117,7 @@
                 <p class="ui-helper-clearfix"><label>Strona www projektu</label></p>
                 <p><textarea id="project_www" name="project_www" class="input-textarea ckeditor">{$details.project_www}</textarea></p>
                 <p class="ui-helper-clearfix"><label>Koordynator projektu + kontakt</label></p>
-                <p><textarea id="project_contact" name="project_contact" class="input-textarea ckeditor">{$details.project_contact}</textarea></p>
+                <p><textarea id="project_coordinator" name="project_coordinator" class="input-textarea ckeditor">{$details.project_coordinator}</textarea></p>
                 <p class="ui-helper-clearfix"><label>Galeria projektu</label></p>
                 <div>
                     <select id="gallery_id" name="gallery_id">

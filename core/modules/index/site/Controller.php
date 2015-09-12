@@ -33,9 +33,8 @@ class indexController extends Engine_Controller	{
         $this->_view->btList = $this->_cms->getBTypeList();
         $this->_view->ptList = $this->_cms->getPTypeList();
         
-		if(is_numeric($this->_router->getItemSegments(2))){
-			
-			$details = $this->_cms->getPageContent((int)$this->_router->getItemSegments(2));
+		if(is_numeric($this->_router->getItemSegments(1))){
+			$details = $this->_cms->getProjectDetails((int)$this->_router->getItemSegments(1));
 			$this->_view->details = $details;	
 			$this->_engine->setToRender('project.tpl');
 			

@@ -127,7 +127,7 @@ class Engine_Router	{
 		if($this->config->multi_locale == '1') {
 			if($index == '0' && $this->segments[$this->firstSegmentIndex + $index] != 'cms')	{
 				if(!empty($this->segments[$this->firstSegmentIndex + $index]) && !in_array($this->segments[$this->firstSegmentIndex + $index], $this->accepted_locale)) {
-					die('NIEPRAWIDŁOWA WARTOŚĆ WERSJI JĘZYKOWEJ!!!');
+					//die('NIEPRAWIDŁOWA WARTOŚĆ WERSJI JĘZYKOWEJ!!!');
 				}
 				$this->config->current_locale = $this->segments[$this->firstSegmentIndex + $index];
 				if(empty($this->segments[$this->firstSegmentIndex + $index]))	{
@@ -136,7 +136,7 @@ class Engine_Router	{
 				Zend_Registry::set('config', $this->config);
 			}
 			if($this->segments[$this->firstSegmentIndex] != 'cms') { 
-				$index++; 
+				//$index++; 
 			}
 		}
 		

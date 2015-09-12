@@ -1,9 +1,27 @@
+/**
+
+@author Adam Majchrzak biuro.netiz@gmail.com
+
+*/
 body {
-  background-color: #dbe1f9; }
+  background-color: #dbe1f9;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+  color: #3a3d8c; }
+
+a {
+  text-decoration: none;
+  color: #3a3d8c; }
+
+a:hover {
+  text-decoration: underline; }
 
 input {
-  width: 220px;
+  width: 280px;
   padding: 10px;
+  margin-bottom: 15px;
   font-size: 16px;
   line-height: 1;
   background-color: #dbe1f9;
@@ -13,7 +31,7 @@ input {
 
 select {
   background: transparent;
-  width: 268px;
+  width: 320px;
   padding: 5px;
   font-size: 16px;
   line-height: 1;
@@ -25,15 +43,16 @@ select {
   margin-right: 3px; }
 
 .styled-select {
-  width: 240px;
+  width: 300px;
   height: 34px;
+  margin-bottom: 15px;
   overflow: hidden;
   background: url(/images/select-arrow.png) no-repeat right #dbe1f9;
   border: 1px solid #4d69b2;
   border-radius: 5px; }
 
 button {
-  width: 240px;
+  width: 300px;
   padding: 10px;
   font-size: 16px;
   line-height: 1;
@@ -44,25 +63,72 @@ button {
   font-weight: bolder; }
 
 h2 {
-  width: 100%;
+  width: auto;
   text-align: center;
   background-color: #3a3d8c;
   color: #ffffff;
   border-radius: 5px;
-  padding: 5px; }
+  padding: 10px; }
+
+#header #header-content {
+  margin: auto;
+  text-align: center; }
+
+#footer {
+  background-color: #ffffff;
+  background-image: url(/images/bg-footer.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding-top: 110px;
+  margin-top: 100px; }
+  #footer #footer-content {
+    width: 950px;
+    margin: auto;
+    color: #bdbdbd;
+    text-align: center; }
 
 #page-index-content {
   width: 950px;
   margin: auto; }
+  #page-index-content #page-content-left {
+    width: 620px;
+    float: left; }
+  #page-index-content #page-content-right {
+    width: 310px;
+    float: right; }
+    #page-index-content #page-content-right #page-content-right-header {
+      background-color: #3a3d8c;
+      border: 1px solid #3a3d8c;
+      padding: 5px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      color: #ffffff;
+      font-size: 16px;
+      width: 290px; }
+      #page-index-content #page-content-right #page-content-right-header h3 {
+        padding: 0px;
+        margin: 0px; }
 
 #projectList {
-  width: 100%; }
+  width: 100%;
+  margin: auto; }
+  #projectList th {
+    padding: 10px; }
   #projectList tr:nth-child(even) {
-    background: #dbe1f9; }
+    background-color: #dbe1f9; }
   #projectList tr:nth-child(odd) {
-    background: #bbc4eb; }
+    background-color: #bbc4eb; }
   #projectList td {
     color: #3b3885;
-    padding: 5px; }
+    padding: 10px; }
+  #projectList td:nth-child(1) {
+    font-weight: bold; }
+
+#page-content {
+  width: 950px;
+  margin: auto; }
+  #page-content .projectDetails td {
+    border-bottom: 1px solid #bac4ea;
+    padding: 10px; }
 
 /*# sourceMappingURL=style.css.map */
