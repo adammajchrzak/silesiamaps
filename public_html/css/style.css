@@ -70,9 +70,14 @@ h2 {
   border-radius: 5px;
   padding: 10px; }
 
-#header #header-content {
-  margin: auto;
-  text-align: center; }
+#header {
+  background-image: url(/images/bg-header.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 470px; }
+  #header #header-content {
+    margin: auto;
+    text-align: center; }
 
 #footer {
   background-color: #ffffff;
@@ -80,19 +85,32 @@ h2 {
   background-repeat: no-repeat;
   background-position: top center;
   padding-top: 110px;
+  padding-bottom: 40px;
   margin-top: 100px; }
   #footer #footer-content {
     width: 950px;
     margin: auto;
     color: #bdbdbd;
-    text-align: center; }
+    text-align: center;
+    font-size: 12px; }
 
 #page-index-content {
   width: 950px;
   margin: auto; }
   #page-index-content #page-content-left {
     width: 620px;
-    float: left; }
+    height: 504px;
+    display: block;
+    position: relative;
+    float: left;
+    background-image: url(/images/map-full.png);
+    background-repeat: no-repeat; }
+    #page-index-content #page-content-left #up {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      cursor: pointer;
+      z-index: 1000; }
   #page-index-content #page-content-right {
     width: 310px;
     float: right; }

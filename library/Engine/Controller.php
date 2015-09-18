@@ -36,7 +36,7 @@ abstract class Engine_Controller	{
 		$this->_function	= Functions::Instance();
 
 		$this->_head->addScriptFile($this->_config->jquery_min, true, '/scripts/');		// jquery.min.js
-		$this->_view->head = $this->_head;
+		
 		
 		$this->_view->_auth = $this->_auth;
 		
@@ -47,7 +47,7 @@ abstract class Engine_Controller	{
 		
 		
 		if($this->_config->module_type == 'cms')	{
-			
+			$this->_head->addScriptFile('jquery-1.7.1.min.js', true, '/scripts/');		// jquery.min.js
 			$this->_session->current_locale = $this->_config->default_locale;
 			include "templates/".$this->_config->module_type."/locale/".$this->_session->current_locale.".php";
 			if(is_file("../core/modules/".$this->_config->module."/".$this->_config->module_type."/locale/".$this->_session->current_locale.".php"))	{
@@ -74,6 +74,8 @@ abstract class Engine_Controller	{
                 $this->_view->$key 	= $this->_view->render($value);
             }
         }
+        
+        $this->_view->head = $this->_head;
 	}
 }
 ?>

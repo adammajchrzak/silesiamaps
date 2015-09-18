@@ -82,6 +82,10 @@ h2 {
 }
 
 #header {
+    background-image: url(/images/bg-header.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 470px;
     #header-content {
         margin: auto;
         text-align: center;
@@ -94,12 +98,14 @@ h2 {
     background-repeat: no-repeat;
     background-position: top center;
     padding-top: 110px;
+    padding-bottom: 40px;
     margin-top: 100px;
     #footer-content {
         width: 950px;
         margin: auto;
         color: #bdbdbd;
         text-align: center;
+        font-size: 12px;
     }
 }
 
@@ -108,7 +114,19 @@ h2 {
     margin: auto;
     #page-content-left {
         width: 620px;
+        height: 504px;
+        display: block;
+        position: relative;
         float: left;
+        background-image: url(/images/map-full.png);
+        background-repeat: no-repeat;
+        #up{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            cursor: pointer;
+            z-index: 1000;
+        }
     }
     #page-content-right {
         width: 310px;

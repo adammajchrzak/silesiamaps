@@ -61,4 +61,7 @@ $(function () {
             $('.accordion').accordion({active: false})
         }
     });
+    
+    $("#_start").datepicker($.datepicker.regional[ "pl" ]);
+	$("#_end").datepicker($.datepicker.regional[ "pl" ]);
 });

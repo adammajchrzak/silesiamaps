@@ -18,7 +18,7 @@
 			<pagesInRange>10</pagesInRange>
 		</pagination>
 		<style_base>style.base.css</style_base>
-		<jquery_min>jquery-2.1.4.min.js</jquery_min>
+		<jquery_min>jquery-1.7.1.min.js</jquery_min>
 		<jqueryui>1.8.13.custom</jqueryui>
 		<gallery_dir>/files/gallery/</gallery_dir>		
 		<gallery_max_x>800</gallery_max_x>
@@ -68,10 +68,10 @@
 		<database>
 			<adapter>pdo_mysql</adapter>
 			<params>
-				<host>localhost</host>
-				<username>root</username>
-				<password>mysql</password>
-				<dbname>euroregion</dbname>
+				<host>231.m.tld.pl</host>
+				<username>admin231_euromaps</username>
+				<password>8Pw7V{GvnE</password>
+				<dbname>baza231_euromaps</dbname>
 				<charset>utf8</charset>
 				<prefix></prefix>
 			</params>

@@ -31,7 +31,6 @@ class indexController extends Engine_Controller	{
 		$this->_head->addScriptFile('base.js', true, '/scripts/cms/');              // JqueryUI JS
 		$this->_head->addScriptFile('jquery.uniform.min.js', true, '/scripts/cms/');// JqueryUI JS
 		$this->_head->addScriptFile('index.js', true, '/scripts/cms/');             // JqueryUI JS
-		$this->_head->addScriptFile('jquery.CKEditor.js', true, '/scripts/cms/');	// JqueryUI JS
 		$this->_head->addScriptFile('jquery.ui.datepicker-pl.js', true, '/scripts/');
 		$this->_head->addScriptFile('ckeditor.js', true, '/scripts/cms/ckeditor/');
 		

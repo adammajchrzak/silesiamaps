@@ -164,12 +164,5 @@ $(function() {
 		return true;
 	});
 	
-	$("#_start").datepicker($.datepicker.regional[ "pl" ]);
-	$("#_end").datepicker($.datepicker.regional[ "pl" ]);
-        
-        $('.ckeditor').ckeditor({
-            path: '/scripts/cms/ckeditor/',
-            height: 350,
-            width: '100%'
-        });
+	
 });

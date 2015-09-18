@@ -35,6 +35,7 @@ class galleryController extends Engine_Controller	{
 		$this->_head->addScriptFile('jquery.colorbox.js', true, '/scripts/');
 		$this->_head->addScriptFile('gallery.js', true, '/scripts/cms/');		// JqueryUI JS
         $this->_head->addScriptFile('ckeditor.js', true, '/scripts/cms/ckeditor/');
+        $this->_head->addScriptFile('base.js', true, '/scripts/cms/');              // JqueryUI JS
 		
 		if($this->_config->multi_locale == '1')	{
 			$this->_view->locale_list	=	$this->_function->getSiteLocaleList();

@@ -1,6 +1,10 @@
 <div id="page-index-content">
     <div id="page-content-left">
-        <img src="/images/map-full.png" alt="Mapa projektów 2007-2013 Euroregion Silesia" />
+        <div id="mapContainer"></div>
+        <div id="mapDetails">
+            <div id="up"><< powrót</div>
+            <div id="mapDetailsContent"></div>
+        </div>
     </div>
     <div id="page-content-right">
         <div id="page-content-right-header">
@@ -95,3 +99,31 @@
         {/foreach}    
     </table>
 </div>
+{literal}
+<script>
+$(function() {{/literal}
+	{if $selected.stateId != '' && $selected.stateId != '0'}
+    {literal}
+    $('#mapContainer').hide();
+    $('#page-content-left').css({
+       'background-size': '25% 25%',
+       'background-position': 'left bottom'
+    });
+    $('#mapDetails').show();
+    {/literal}
+        {else}
+    {literal}
+    setTimeout(function(){
+        $('#page-content-left').css({
+           'background-size': '25% 25%',
+           'background-position': 'left bottom'
+        });
+        $('#mapContainer').show({
+            duration: 2000,
+        });
+    }, 3000);
+    {/literal}        
+    {/if}{literal}
+});	
+</script>
+{/literal}

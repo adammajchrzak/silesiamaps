@@ -14,10 +14,10 @@
 		{*	załadowanie plików scryptów *}
 		{foreach from=$head->getScripts() item=script }
 		    <script src="{$script.path}{$script.file}" type="text/javascript" ></script>
-		{/foreach}	
+		{/foreach}
+        <script src="http://code.highcharts.com/maps/highmaps.js"></script>
+        <script src="/scripts/map.js" type="text/javascript"></script>
 </head>
 <body>
-    <div id="header">
-        <div id="header-content"><img src="/images/bg-header.png" alt="Mapa projektów 2007-2013 Euroregion Silesia" /></div>
-    </div>
+<div id="header"></div>
 <div id="page-body">

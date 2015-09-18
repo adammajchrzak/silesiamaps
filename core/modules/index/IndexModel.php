@@ -53,6 +53,11 @@ class IndexModel extends Engine_Model {
                 'cp.city_id = cc.city_id',
                 array('*')
             )
+            ->joinLeft(
+                array('cg' => 'cms_gallery'),
+                'cp.gallery_id = cg.gallery_id',
+                array('*')
+            )
             ;
 		
         if(empty($where) === false) {
@@ -88,7 +93,7 @@ class IndexModel extends Engine_Model {
                 $select->where('cpt.ptype_id = ?', intval($where['pTypeId']));
             }
         }
-        
+        $select->order('project_id');
         
 		$result = $this->_db->fetchAll($select);
 		
@@ -244,6 +249,7 @@ class IndexModel extends Engine_Model {
             "city_id"               =>  $data['city_id'],
             "btype_id"              =>  $data['btype_id'],
             "ptype_id"              =>  $data['ptype_id'],
+            "gallery_id"            =>  $data['gallery_id'],
             "_start"                =>	$data['_start'],
             "_end"                  =>	$data['_end'],
 			"_active"               =>	@(int)$data['page_active'],
@@ -287,6 +293,7 @@ class IndexModel extends Engine_Model {
             "city_id"               =>  $data['city_id'],
             "btype_id"              =>  $data['btype_id'],
             "ptype_id"              =>  $data['ptype_id'],
+            "gallery_id"            =>  $data['gallery_id'],
             "_start"                =>	$data['_start'],
             "_end"                  =>	$data['_end'],
 			"_active"               =>	@(int)$data['page_active'],

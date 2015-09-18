@@ -125,7 +125,7 @@
                     <select id="gallery_id" name="gallery_id">
                         <option>-- wybierz z listy -- </option>
                         {foreach from=$gallery_list item=gl}
-                            <option value="{$g.gallery_id}">{$gl.gallery_name}</option>
+                            <option value="{$gl.gallery_id}">{$gl._name}</option>
                         {/foreach}
                     </select>
                 </div>
