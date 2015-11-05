@@ -8,11 +8,11 @@
         </tr>
         <tr>
             <td>Priorytet</td>
-            <td>{$details.project_id}</td>
+            <td><strong>{$priority[$details.priority_id]}</strong></td>
         </tr>
         <tr>
             <td>Dziedzina wsparcia/temat</td>
-            <td>{$details.topic_id}</td>
+            <td><strong>{$topic[$details.topic_id]}</strong></td>
         </tr>
         <tr>
             <td>Czas trwania</td>
@@ -24,12 +24,10 @@
             <td>Beneficjent PL</td>
             <td><strong>{$details.beneficiary}</strong></td>
         </tr>
-        {if $details.unity_name != ''}
-            <tr>
-                <td>Jednostka realizujca PL</td>
-                <td>{$details.unity_name}</td>
-            </tr>
-        {/if}
+        <tr>
+            <td>Jednostka realizująca PL</td>
+            <td><strong>{$details.unit_name}</strong></td>
+        </tr>
         <tr>
             <td>Partnerzy projektu</td>
             <td>
@@ -40,6 +38,18 @@
                     Partner PL: <strong>{$details.partner_pl}</strong>
                 {/if}
             </td>
+        </tr>
+        <tr>
+            <td>Typ projektu</td>
+            <td><strong>{$details.type_name}</strong></td>
+        </tr>
+        <tr>
+            <td>Rodzaj beneficjenta</td>
+            <td><strong>{$details.btype_name}</strong></td>
+        </tr>
+        <tr>
+            <td>Rodzaj projektu</td>
+            <td><strong>{$details.ptype_name}</strong></td>
         </tr>
     </table>
 
@@ -87,12 +97,11 @@
     </div>
     <div style="clear: both;"></div>    
     <h2>Opis projektu</h2>    
-    {$details.project_description}
+    <div style="text-align: justify;">{$details.project_description}</div>
     <h3>Opis zrealizowanych działań</h3>
-    {$details.project_report}
-
+    <div style="text-align: justify;">{$details.project_report}</div>
     <h3>Efekty projektu/produkty projektu - zrealizowane</h3>
-    {$details.project_effect}
+    <div style="text-align: justify;">{$details.project_effect}</div>
     <h3>Strona www projektu</h3>
     {$details.project_www}
     <h3>Koordynator projektu + kontakt</h3>

@@ -15,6 +15,8 @@ class indexController extends Engine_Controller	{
 		
 		$this->_cms 		= IndexModel::Instance();
 		$this->_gallery		= GalleryModel::Instance();
+        $this->priority = array('1' => '3. Wspieranie współpracy społeczności lokalnych');
+        $this->topic = array('1' => '3.3. Fundusz Mikroprojektów w Euroregionie Silesia');
 		
 		$this->_head->addStyleFile('style.css', 'screen', true, '/css/');
         $this->_head->addStyleFile('lightgallery.css', 'screen', true, '/css/');		
@@ -31,11 +33,13 @@ class indexController extends Engine_Controller	{
 	public function index()	{
 		
         $this->_view->stateList = $this->_cms->getStateList();
-        $this->_view->regionList = $this->_cms->getRegionList();
-        $this->_view->communeList = $this->_cms->getCommuneList();
-        $this->_view->cityList = $this->_cms->getCityList();
+        $this->_view->regionList = $this->_cms->getRegionList((int)$_GET['stateId']);
+        $this->_view->communeList = $this->_cms->getCommuneList((int)$_GET['regionId']);
+        $this->_view->cityList = $this->_cms->getCityList((int)$_GET['communeId']);
         $this->_view->btList = $this->_cms->getBTypeList();
         $this->_view->ptList = $this->_cms->getPTypeList();
+        $this->_view->priority = $this->priority;
+        $this->_view->topic = $this->topic;
         
 		if(is_numeric($this->_router->getItemSegments(1))){
 			$details = $this->_cms->getProjectDetails((int)$this->_router->getItemSegments(1));

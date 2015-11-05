@@ -88,7 +88,7 @@ class GalleryModel extends Engine_Model {
 			'_changed'				=>	date("Y-m-d H:i:s")	
 		);
 		
-		$this->_db->update("cms_gallery", $update, "gallery_id = '".(int)$gallery_id."'");
+		$this->_db->update("cms_gallery", $update, "gallery_id = '".(int)$data['gallery_id']."'");
 		
 		return true;
 	}

@@ -21,7 +21,7 @@
 
 {if $_auth->hasIdentity()}
 	<div id="page-top">
-		<div id="page-logo">Euroregions.org</div>
+		<div id="page-logo">CMS - Mapa projektów 2007 - 2013</div>
 		<ul id="page-top-menu">
 			<li><a href="/{$router->getUrl('cms', 'auth', 'logout')}">wyloguj</a></li>
 		</ul>

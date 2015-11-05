@@ -1,4 +1,4 @@
-<div class="ui-widget ui-widget-content ui-corner-all main-content">
+<div class="ui-widget ui-widget-content ui-corner-all main-content" style="width: 900px;">
     <form id="form-edit-page" name="form-edit-page" method="post" action="">
         <div class="header-module">Edytuj projekt</div>
         <div style="text-align: right; margin-bottom: 10px;">

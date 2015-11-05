@@ -1,6 +1,6 @@
 <div id="login-form-page" class="ui-widget ui-widget-content ui-corner-all">
 	
-	<div id="page-auth-title"><img src="/images/page-logo.transparent.png" alt="euroregions.org" /></div>
+	<div id="page-auth-title">Mapa projektów 2007-2013 - CMS</div>
 		
 	<form id="page_login" action="/{$router->getUrl('cms','auth','login')}" method="post">
 		<div class="ui-helper-clearfix"><label>{$locale.cms.auth.user}</label> <input type="text" id="login" name="login" class="input-text-200{if $error} ui-state-error{/if}" /></div>

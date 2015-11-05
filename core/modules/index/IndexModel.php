@@ -133,26 +133,46 @@ class IndexModel extends Engine_Model {
         return $result;
     }
     
-    public function getRegionList()
+    public function getRegionList($itemId = 0)
     {
-        $select = $this->_db->select()->from(array('cr' => 'cms_region'))->order('region_name ASC');
+        $select = $this->_db->select()
+                ->from(array('cr' => 'cms_region'))
+                ->order('region_name ASC');
+        
+        if($itemId !== 0) {
+            $select->where('state_id = ?', $itemId);
+        }
+        
         $result = $this->_db->fetchAll($select);
         
         return $result;
     }
     
-    public function getCityList()
+    public function getCommuneList($itemId = 0)
     {
-        $select = $this->_db->select()->from(array('cc' => 'cms_city'))->order('city_name ASC');
+        $select = $this->_db->select()
+                ->from(array('cc' => 'cms_commune'))
+                ->order('commune_name ASC');
+        
+        if($itemId !== 0) {
+            $select->where('region_id = ?', $itemId);
+        }
+        
         $result = $this->_db->fetchAll($select);
         
         return $result;
     }
     
-    
-    public function getCommuneList()
+    public function getCityList($itemId = 0)
     {
-        $select = $this->_db->select()->from(array('cc' => 'cms_commune'))->order('commune_name ASC');
+        $select = $this->_db->select()
+                ->from(array('cc' => 'cms_city'))
+                ->order('city_name ASC');
+        
+        if($itemId !== 0) {
+            $select->where('commune_id = ?', $itemId);
+        }
+        
         $result = $this->_db->fetchAll($select);
         
         return $result;
@@ -200,6 +220,11 @@ class IndexModel extends Engine_Model {
             ->joinLeft(
                 array('cpt' => 'cms_ptype'),
                 'cp.ptype_id = cpt.ptype_id',
+                array('*')
+            )
+            ->joinLeft(
+                array('ct' => 'cms_type'),
+                'cp.type_id = ct.type_id',
                 array('*')
             )
             ->joinLeft(

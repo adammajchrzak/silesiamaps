@@ -1,5 +1,5 @@
 <div id="dialog-message" title="Pole wymagane"></div>
-<div class="ui-widget ui-widget-content ui-corner-all main-content">
+<div class="ui-widget ui-widget-content ui-corner-all main-content" style="width: 900px;">
 <form id="form-add-gallery" name="form-add-gallery" method="post" action="/{$router->getUrl('cms','gallery', 'edit')}">
 <div class="header-module">Dodaj galerię</div>
 <div style="text-align: right; margin-bottom: 10px;">

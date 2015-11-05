@@ -73,7 +73,8 @@
             <button type="submit">WYSZUKAJ</button>
         </form>
     </div>
-                <div style="clear: both;"></div>
+    <div style="clear: both;"></div>
+    {if (sizeof($projectList) > 0) }
     <h2>WYNIKI WYSZUKIWANIA</h2>        
     <table id="projectList" cellspacing="0">
         <tr>
@@ -98,6 +99,7 @@
             </tr>
         {/foreach}    
     </table>
+    {/if}
 </div>
 {literal}
 <script>

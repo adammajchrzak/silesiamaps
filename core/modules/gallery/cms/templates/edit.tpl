@@ -31,9 +31,8 @@ $(function() {
 {/literal}
 
 <div id="dialog-message" title="Pole wymagane"></div>
-<div class="ui-widget ui-widget-content ui-corner-all main-content">
+<div class="ui-widget ui-widget-content ui-corner-all main-content" style="width: 900px;">
 <form id="form-edit-gallery" name="form-edit-gallery" method="post" action="/{$router->getUrl('cms','gallery', 'edit')}">
-<input type="hidden" id="gallery_id" name="gallery_id" value="{$gallery_details.gallery_id}" />
 <div class="header-module">Edytuj galerię</div>
 <div style="text-align: right; margin-bottom: 10px;">
 	<button type="button" onclick="document.location.href='/{$router->getUrl('cms','gallery')}';">anuluj</button>
